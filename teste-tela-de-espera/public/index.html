@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sala de Espera - Multiplayer</title>
+    <meta
+      name="description"
+      content="Aguardando jogadores para iniciar a partida"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Overlay de desistência da partida -->
+    <div id="quit-overlay" class="overlay hidden">
+      <div class="overlay-content">
+        <p>Você saiu da partida</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Header -->
+      <header class="card room-header">
+        <h1>Sala: <span class="room-name">TESTE FRONTEND</span></h1>
+      </header>
+
+      <!-- Header 2 -->
+      <div class="card info-bar">
+        <div class="info-item">
+          <span class="info-label">Dificuldade:</span>
+          <span class="badge badge-primary">Todos</span>
+        </div>
+        <div class="info-item">
+          <svg class="icon coin-icon" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="10" />
+          </svg>
+          <span class="coins-value">10</span>
+        </div>
+        <div class="info-item">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+          <span id="player-count">0/5</span>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <!-- Painel de jogadores -->
+        <div class="card players-panel">
+          <h2>Jogadores</h2>
+          <div id="players-list" class="players-list">
+            <!-- Player slots will be inserted here by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Painel de chat -->
+        <div class="card chat-panel">
+          <h2>Chat</h2>
+          <div id="chat-messages" class="chat-messages">
+            <!-- Messages will be inserted here by JavaScript -->
+          </div>
+          <div class="quick-messages">
+            <button class="quick-msg-btn" data-message="Boa sorte!">
+              Boa sorte!
+            </button>
+            <button class="quick-msg-btn" data-message="Vamos la!">
+              Vamos la!
+            </button>
+            <button class="quick-msg-btn" data-message="Oi pessoal!">
+              Oi pessoal!
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caixa de dicas -->
+      <div class="card tips-section">
+        <div class="tips-header">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            />
+          </svg>
+          <span>Dica</span>
+        </div>
+        <p id="tip-text" class="tip-text"></p>
+      </div>
+
+      <!-- Botões -->
+      <div class="action-buttons">
+        <button id="quit-btn" class="btn btn-danger">Desistir</button>
+        <button id="start-btn" class="btn btn-primary" disabled>
+          Iniciar Partida
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
